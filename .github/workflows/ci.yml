@@ -1,7 +1,12 @@
 name: CI
 
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  run_tests:
+  run_main:
     runs-on: ${{ matrix.os }}
 
     strategy:
