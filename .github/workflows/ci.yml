@@ -67,6 +67,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
       - name: Cache ID
         shell: bash
         run: |
@@ -99,7 +103,9 @@ jobs:
           python -m pip list
       - name: Run file
         run: |
+          which python
           python main.py
-      - name: Run file second time
+      - name: Run file
         run: |
+          which python
           python main.py
