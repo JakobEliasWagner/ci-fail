@@ -53,6 +53,7 @@ jobs:
           python -m pip list
       - name: Run file
         run: |
+          which python
           python main.py
 
   run_main_twice:
